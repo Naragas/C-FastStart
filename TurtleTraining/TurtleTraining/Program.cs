@@ -61,27 +61,70 @@ namespace TurtleTraining
             Turtle.TurnLeft();
         }
 
-        public static void WriteT()
+
+        public static void WriteT(int longLine, int shortLine)
         {
             Turtle.Angle = 0;
-            Turtle.Move(60);
+            Turtle.Move(longLine);
             Turtle.TurnLeft();
-            Turtle.Move(20);
+            Turtle.Move(shortLine);
             Turtle.Angle = 90;
-            Turtle.Move(40);
+            Turtle.Move(shortLine * 2);
 
 
         }
 
+
+        public static void WriteO(int way)
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                Turtle.Move(way);
+                Turtle.TurnRight();
+            } 
+        }
+
+        public static void WriteP(int longLine, int shortLine)
+        {
+            Turtle.Angle = 0;
+            Turtle.Move(longLine);
+            Turtle.TurnRight();
+            for (int i = 0; i < 3; i++)
+            {
+                
+                Turtle.Move(shortLine);
+                Turtle.TurnRight();
+            }
+
+
+        }
+
+
         static void Main(string[] args)
         {
             Turtle.Speed = 9;
-            Turtle.X = 100;
-            Turtle.Y = 100;
+            Turtle.X = 120;
+            Turtle.Y = 200;
 
-            snake();
-            pentagon();
+            WriteT(60, 20);
 
+            Turtle.X = 150;
+            Turtle.Y = 170;
+
+            WriteO(30);
+
+            Turtle.X = 200;
+            Turtle.Y = 230;
+
+            WriteP(60, 30);
+
+            Turtle.X = 260;
+            Turtle.Y = 200;
+
+            WriteT(30, 15);
+
+            Turtle.X = 250;
+            Turtle.Y = 300;
 
         }
     }
