@@ -70,10 +70,38 @@ namespace TurtleTraining
             Turtle.Move(shortLine);
             Turtle.Angle = 90;
             Turtle.Move(shortLine * 2);
-
-
         }
 
+        public static void WriteA(int longLine, int shortLine)
+        {
+            Turtle.Angle = 0;
+            Turtle.Turn(25);
+            Turtle.Move(longLine);
+            Turtle.Turn(130);
+            Turtle.Move(longLine);
+            Turtle.Turn(180);
+            Turtle.Move(longLine / 2);
+            Turtle.Turn(-65);
+            Turtle.Move(shortLine);
+        }
+
+        public static void WriteL(int longLine)
+        {
+            Turtle.Angle = 0;
+            Turtle.Turn(25);
+            Turtle.Move(longLine);
+            Turtle.Turn(130);
+            Turtle.Move(longLine);
+        }
+
+
+        public static void WriteG(int longLine, int shortLine)
+        {
+            Turtle.Angle = 0;
+            Turtle.Move(longLine);
+            Turtle.TurnRight();
+            Turtle.Move(shortLine);
+        }
 
         public static void WriteO(int way)
         {
@@ -95,6 +123,25 @@ namespace TurtleTraining
                 Turtle.Move(shortLine);
                 Turtle.TurnRight();
             }
+
+
+        }
+
+        public static void WriteYa(int longLine, int shortLine)
+        {
+            Turtle.Angle = 0;
+            Turtle.Move(longLine);
+            Turtle.TurnLeft();
+            for (int i = 0; i < 3; i++)
+            {
+
+                Turtle.Move(shortLine);
+                Turtle.TurnLeft();
+            }
+            Turtle.Turn(-135);
+            Turtle.Move(shortLine);
+
+
 
 
         }
@@ -125,6 +172,23 @@ namespace TurtleTraining
 
             Turtle.X = 250;
             Turtle.Y = 300;
+
+            WriteG(55, 30);
+
+            Turtle.X = 280;
+            Turtle.Y = 300;
+
+            WriteA(60, 25);
+
+            Turtle.X = 340;
+            Turtle.Y = 300;
+
+            WriteL(60);
+
+            Turtle.X = 450;
+            Turtle.Y = 300;
+
+            WriteYa(55, 30);
 
         }
     }
